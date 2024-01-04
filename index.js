@@ -2,6 +2,20 @@ let hour = document.getElementById('hour')
 let minute = document.getElementById('minute')
 let second = document.getElementById('second')
 let amORpm = document.getElementById('ME')
+let currentday = document.getElementById('day')
+let twelve = document.getElementById('twelve')
+let twentyfour = document.getElementById('twentyfour')
+
+
+let days = {
+    1:'Monday',
+    2:'Tuesday',
+    3:'Wednesday',
+    4:'Thursday',
+    5:'Friday',
+    6:'Saturday',
+    7:'Sunday'
+}
 
 let twelveHourFormat = (hours)=>{
     let format = 12
@@ -21,6 +35,7 @@ setInterval(()=>{
     let current_hour = date.getHours()
     let current_minute = date.getMinutes()
     let current_second = date.getSeconds()
+    currentday.innerHTML = days[day]
     hour.innerHTML = (current_hour<10)? '0'+current_hour:current_hour
     minute.innerHTML = (current_minute<10)? '0'+current_minute : current_minute
     second.innerHTML = (current_second<10)? '0'+current_second:current_second
