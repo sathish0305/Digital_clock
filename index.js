@@ -24,15 +24,15 @@ let clock = ()=>{
       formatToggle =  twelvehourToggle.classList.toggle('format-toggle-twenty')
     })
     if(formatToggle === false){
-        time.innerHTML = `${padZero(presentHour)}:${padZero(presentMinute)}`
-        second.innerHTML = `${padZero(presentSecond)}`
-        twelvehour.innerHTML = ''
-    }else{
         const ampm = presentHour >= 12 ? 'PM' : 'AM';
         presentHour = presentHour % 12 || 12;
         time.innerHTML = `${padZero(presentHour)}:${padZero(presentMinute)}`
         second.innerHTML = `${padZero(presentSecond)}`
         twelvehour.innerHTML = ampm
+    }else{
+        time.innerHTML = `${padZero(presentHour)}:${padZero(presentMinute)}`
+        second.innerHTML = `${padZero(presentSecond)}`
+        twelvehour.innerHTML = ''
     }
     day.innerHTML = dayDict[present.getDay()]
 }
