@@ -34,15 +34,15 @@
 }
 
 .dark-button{
-    background-image: url(./public/Sky\ Switch\ -\ Light.svg);
-    height: 2rem;
-    width: 4rem;
-    background-size: contain;
-    background-repeat: no-repeat;
+  background-image: url('/Sky Switch - Dark.svg');
+  height: 2rem;
+  width: 4rem;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .light-button{
-    background-image: url(./public/Sky\ Switch\ -\ Dark.svg);
+    background-image: url('/Sky Switch - Light.svg');
     height: 2rem;
     width: 4rem;
     background-size: contain;
@@ -65,18 +65,19 @@
 .dark-clock-body{
     height: 40%;
     width: 90%;
-    border: 1px solid green;
+    /* border: 1px solid green; */
     display: flex;
 }
 
 .dark-time{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
+    padding-right: 0.5rem;
     font-size: 4rem;
     height: 100%;
-    width: 80%;
-    border: 1px solid white;
+    width: 70%;
+    /* border: 1px solid white; */
 }
 
 .dark-seconds{
@@ -84,29 +85,28 @@
     flex-direction: column;
     height: 100%;
     width: 20%;
-    border: 1px solid crimson;   
+    /* border: 1px solid crimson;    */
 }
 
 .dark-am, .dark-second{
     display: flex;
     align-items: center;
     justify-content: start;
-    height: 50%;
+    height: 45%;
     width: 100%;
-    border: 1px solid yellow;
+    /* border: 1px solid yellow; */
     font-size: 1.5rem;
 }
 
 .dark-day-body{
     height: 40%;
     width: 90%;
-    border: 1px solid pink;
+    /* border: 1px solid pink; */
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 3rem;
 }
-
 
 
 @media only screen and (max-width: 600px) {
