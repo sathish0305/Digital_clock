@@ -29,8 +29,45 @@
   height: 10%;
   width: 90%;
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
+}
+
+.format-toggle-twelve{
+  background-image: url('/Th.svg');
+  height: 2rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: justify-content 1s ease-in-out linear;
+}
+
+.format-toggle-twenty{
+  background-image: url('/Twh.svg');
+  height: 2rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: justify-content 1s ease-in-out linear;
+}
+
+.format-switch{
+  height: 1.5rem;
+  width: 1.5rem;
+  background-image: url('/switchbutton.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-top: 0.2rem;
+  margin: 0.2rem;
+  color: #2d033b;
+  font-size: 0.7rem;
+  text-align: center;
 }
 
 .dark-button{
@@ -65,19 +102,16 @@
 .dark-clock-body{
     height: 40%;
     width: 90%;
-    /* border: 1px solid green; */
     display: flex;
+    justify-content: center;
 }
 
 .dark-time{
     display: flex;
     align-items: center;
     justify-content: end;
-    padding-right: 0.5rem;
     font-size: 4rem;
     height: 100%;
-    width: 70%;
-    /* border: 1px solid white; */
 }
 
 .dark-seconds{
@@ -85,23 +119,20 @@
     flex-direction: column;
     height: 100%;
     width: 20%;
-    /* border: 1px solid crimson;    */
 }
 
 .dark-am, .dark-second{
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: center;
     height: 45%;
     width: 100%;
-    /* border: 1px solid yellow; */
     font-size: 1.5rem;
 }
 
 .dark-day-body{
     height: 40%;
     width: 90%;
-    /* border: 1px solid pink; */
     display: flex;
     align-items: center;
     justify-content: center;
