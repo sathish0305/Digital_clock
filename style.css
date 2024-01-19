@@ -32,28 +32,24 @@
   justify-content: center;
 }
 
-.format-toggle-twelve{
-  background-image: url('/Th.svg');
+.format-toggle-twelve, .format-toggle-twenty{
   height: 2rem;
   width: 4rem;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   background-size: contain;
   background-repeat: no-repeat;
   transition: justify-content 1s ease-in-out;
 }
 
+.format-toggle-twelve{
+  background-image: url('/Th.svg');
+  justify-content: flex-start;
+}
+
 .format-toggle-twenty{
   background-image: url('/Twh.svg');
-  height: 2rem;
-  width: 4rem;
-  display: flex;
-  align-items: center;
   justify-content: flex-end;
-  background-size: contain;
-  background-repeat: no-repeat;
-  transition: justify-content 1s ease-in-out;
 }
 
 .format-switch{
@@ -114,9 +110,6 @@
   .inner-container {
     width: 85%;
     height: 95%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
   }
 }
