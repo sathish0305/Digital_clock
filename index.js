@@ -1,7 +1,6 @@
-let hour = document.getElementById('hour')
-let minute = document.getElementById('minute')
-let second = document.getElementById('second')
+let time = document.getElementById('time')
 let day = document.getElementById('day')
+let second = document.getElementById('second')
 let twelvehour = document.getElementById('twelvehour')
 let twelvehourToggle = document.getElementById('format-toggle-twelve')
 
@@ -14,38 +13,31 @@ const dayDict = {
     6: 'Saturday',
     7: 'Sunday'
 }
-let twelveHourFormat = () => {
-    setInterval(() => {
-        let date = new Date()
-        hour.innerHTML = date.getHours()
-        minute.innerHTML = (date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes()
-        second.innerHTML = (date.getSeconds() < 10) ? '0' + date.getSeconds() : date.getSeconds()
-        day.innerHTML = dayDict[date.getDay()]
-    }, 1)
-}
 
-let twentyfourHourFormat = () => {
-    setInterval(() => {
-        let date = new Date()
-        hour.innerHTML = date.getHours()
-        minute.innerHTML = (date.getMinutes() < 10) ? '0' + date.getMinutes() : date.getMinutes()
-        second.innerHTML = (date.getSeconds() < 10) ? '0' + date.getSeconds() : date.getSeconds()
-        day.innerHTML = dayDict[date.getDay()]
+let formatToggle = false
+let clock = ()=>{
+    let present = new Date();
+    let presentHour = present.getHours();
+    let presentMinute = present.getMinutes();
+    let presentSecond = present.getSeconds();
+    twelvehourToggle.addEventListener('click',()=>{
+      formatToggle =  twelvehourToggle.classList.toggle('format-toggle-twenty')
     })
-}
-
-twelvehour.innerHTML = 'AM'
-setInterval(() => {
-    twelveHourFormat();
-}, 1)
-twelvehourToggle.addEventListener('click', () => {
-    let disabled = twelvehourToggle.classList.toggle('format-toggle-twenty')
-    console.log(disabled)
-    if (disabled == true) {
+    if(formatToggle === false){
+        time.innerHTML = `${padZero(presentHour)}:${padZero(presentMinute)}`
+        second.innerHTML = `${padZero(presentSecond)}`
         twelvehour.innerHTML = ''
-        twentyfourHourFormat();
-    } else if (disabled == false) {
-        twelvehour.innerHTML = 'AM'
-        twelveHourFormat();
+    }else{
+        const ampm = presentHour >= 12 ? 'PM' : 'AM';
+        presentHour = presentHour % 12 || 12;
+        time.innerHTML = `${padZero(presentHour)}:${padZero(presentMinute)}`
+        second.innerHTML = `${padZero(presentSecond)}`
+        twelvehour.innerHTML = ampm
     }
-})
+    day.innerHTML = dayDict[present.getDay()]
+}
+setInterval(clock,1)
+
+let padZero = (number)=> {
+    return number < 10 ? '0' + number : number;
+}
